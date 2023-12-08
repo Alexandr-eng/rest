@@ -1,20 +1,17 @@
 from marshmallow import Schema, fields
 
-
-class CreateShemas(Schema):
+class ProductCreateSchema(Schema):
     id = fields.String()
     name = fields.String(required=True)
     price = fields.Float(required=True)
-
 
 class ProductShemas(Schema):
     id = fields.String()
-    name = fields.String(required=True)
-    price = fields.Float(required=True)
+    name = fields.String()
+    price = fields.Float()
 
-
-class ProductGetMany(Schema):
-    page = fields.Integer(required=True)
-    limit = fields.Integer(required=True)
+class ProductGetManyParams(Schema):
+    page = fields.Int(required=True)
+    limit = fields.Int(required=True)
 
 
